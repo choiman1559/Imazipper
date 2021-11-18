@@ -1,5 +1,7 @@
 # Imazipper
-Combine two file into one file &amp; Split combined file into two file
+Combine two file into one file &amp; Split combined file into two file.
+
+***Java 11 and avobe required.***
 
 Usage (CLI) : 
 ```

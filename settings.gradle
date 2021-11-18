@@ -1,0 +1,3 @@
+rootProject.name = 'Imazipper'
+include 'imazipper-library', 'imazipper-cui', 'imazipper-gui'
+

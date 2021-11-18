@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.imazipper'
+version '0.0.1 Alpha'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'com.imazipper'
+}
+
+dependencies {
+    implementation project(":imazipper-library")
+    implementation project(":imazipper-cui")
+    implementation project(":imazipper-gui")
+}

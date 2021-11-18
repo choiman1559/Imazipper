@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.imazipper.cui'
+version '0.0.1 Alpha'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":imazipper-library")
+    implementation 'info.picocli:picocli:4.6.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

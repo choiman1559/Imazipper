@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+javafx {
+    version = '11.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+group 'com.imazipper.gui'
+version '0.0.1 Alpha'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainModule.set('com.imazipper.gui')
+    mainClass.set('com.imazipper.gui.MainApplication')
+}
+
+java {
+    modularity.inferModulePath.set(true)
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation project(':imazipper-library')
+    implementation 'org.openjfx:javafx-controls:11.0.2'
+    implementation ('org.jfxtras:jmetro:11.6.15') {
+        exclude group: 'org.openjfx'
+    }
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}

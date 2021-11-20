@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.imazipper.cui'
-version '0.0.1 Alpha'
+version project.versionName
 
 repositories {
     mavenCentral()

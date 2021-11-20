@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: com.imazipper.gui.MainApplication
+Class-Path: apiguardian-api-1.1.2.jar javafx-graphics-11.0.2-linux.jar c
+ ontrolsfx-11.0.0.jar javafx-graphics-11.0.2.jar jmetro-11.6.15.jar juni
+ t-jupiter-api-5.8.1.jar imazipper_library.jar junit-jupiter-engine-5.8.
+ 1.jar javafx-base-11.0.2-linux.jar junit-platform-commons-1.8.1.jar jav
+ afx-base-11.0.2.jar junit-platform-engine-1.8.1.jar javafx-controls-11.
+ 0.2-linux.jar opentest4j-1.2.0.jar javafx-controls-11.0.2.jar picocli-4
+ .6.2.jar javafx-fxml-11.0.2-linux.jar
+

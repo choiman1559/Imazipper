@@ -3,8 +3,10 @@ plugins {
     id 'application'
 }
 
+project.ext.versionName = '0.1'
+
 group 'com.imazipper'
-version '0.0.1 Alpha'
+version project.versionName
 
 repositories {
     mavenCentral()

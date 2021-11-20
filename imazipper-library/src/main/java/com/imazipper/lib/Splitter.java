@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Splitter {
     protected static boolean verbose = false;
 
-    public static TaskResult Split(File input, File output) {
+    public static TaskResult Split(File input, File output, boolean forceSplit) {
         TaskResult result = new TaskResult();
 
         try {
@@ -62,11 +62,22 @@ public class Splitter {
 
                 int data = 0;
                 bufferedInputStream.skip(lastStartPosition);
-                while (data != -1) {
-                    data = bufferedInputStream.read();
-                    stream.write(data);
+                boolean isNotLastHeader = i + 1 != indexCount;
+
+                if(forceSplit) {
+                    long var =  isNotLastHeader ? headerIndex.get(i + 1) : -2;
+                    for (long j = lastStartPosition; (isNotLastHeader && j < var) && data != -1; j++) {
+                        data = bufferedInputStream.read();
+                        stream.write(data);
+                    }
+                    if (isNotLastHeader) lastStartPosition = var;
+                } else {
+                    while (data != -1) {
+                        data = bufferedInputStream.read();
+                        stream.write(data);
+                    }
+                    if (isNotLastHeader) lastStartPosition = headerIndex.get(i + 1);
                 }
-                if (i + 1 != indexCount) lastStartPosition = headerIndex.get(i + 1);
 
                 stream.close();
                 bufferedInputStream.close();

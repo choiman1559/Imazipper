@@ -15,6 +15,9 @@ public class MainClass {
         @CommandLine.Option(names = {"-v", "--verbose"}, description = "print more detail logs.")
         public boolean isVerbose = false;
 
+        @CommandLine.Option(names = {"-s", "--force-split"}, description = "force splitting even when content conflicts between headers")
+        public boolean isForceSplit = false;
+
         @CommandLine.Option(names = {"-t", "--type"}, description = "selects type of task, only allows [\"combine\"/\"split\"] option.")
         public String JobType = "";
 
@@ -79,7 +82,7 @@ public class MainClass {
                             else output = parameters.splitInputFile.getParentFile();
 
                             Splitter.setVerbose(parameters.isVerbose);
-                            TaskResult result = Splitter.Split(parameters.splitInputFile, output);
+                            TaskResult result = Splitter.Split(parameters.splitInputFile, output, parameters.isForceSplit);
                             if(result.isTaskSuccess()) {
                                 System.out.println("Split task done! output: " + output.getAbsolutePath());
                             } else if(result.hasException()) {

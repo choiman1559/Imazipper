@@ -1,20 +1,30 @@
 package com.imazipper.gui;
 
+import com.imazipper.gui.combine.CombineScreen;
+import com.imazipper.gui.split.SplitScreen;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class MainController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onComButtonClick() {
-        welcomeText.setText("combine");
-        MainApplication.stage.close();
+    protected void onComButtonClick() throws IOException {
+        CombineScreen.start();
     }
 
     @FXML
-    protected void onSplitButtonClick() {
-        welcomeText.setText("split");
+    protected void onSplitButtonClick() throws IOException {
+        SplitScreen.start();
+    }
+
+    @FXML
+    protected void onGitButtonClick() {
+        MainApplication.hostServices.showDocument("https://github.com/choiman1559/Imazipper");
+    }
+
+    @FXML
+    protected void onExitButtonClick() {
+        System.exit(0);
     }
 }

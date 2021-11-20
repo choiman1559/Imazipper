@@ -7,4 +7,8 @@ module com.imazipper.gui {
 
     opens com.imazipper.gui to javafx.fxml;
     exports com.imazipper.gui;
+
+    opens com.imazipper.gui.combine to javafx.fxml;
+    opens com.imazipper.gui.split to javafx.fxml;
+    opens com.imazipper.gui.task to javafx.fxml;
 }

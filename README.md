@@ -6,9 +6,12 @@ Combine two file into one file &amp; Split combined file into two file.
 
 ## How-to-use
 
-**Usage (GUI)** :
+Before you start, first download the Prebuilt binary from the release and unzip it.
 
-Download pre-built binaries at release, unzip it.
+<br />
+
+
+**Usage (GUI)** :
 
 _(Linux/MacOS)_ type ``bash ./bin/imazipper-gui`` in terminal.
 

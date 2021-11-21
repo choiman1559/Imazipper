@@ -3,7 +3,30 @@ Combine two file into one file &amp; Split combined file into two file.
 
 ***Java 11 and avobe required.***
 
-Usage (CLI) : 
+
+## How-to-use
+
+**Usage (GUI)** :
+
+Download pre-built binaries at release, unzip it.
+
+_(Linux/MacOS)_ type ``bash ./bin/imazipper-gui`` in terminal.
+
+_(Windows)_ run ``./bin/imazipper-gui.bat`` in file explorer or type ``./bin/imazipper-gui.bat`` in cmd.
+
+
+**Usage (CLI)** : 
+
+_(Linux/MacOS)_ type ``bash ./bin/imazipper [arguments]`` in terminal.
+
+_(Windows)_ type ``./bin/imazipper.bat [arguments]`` in cmd.
+
+_(Universal)_ type ``java -jar ./lib/imazipper_cui.jar`` in terminal/cmd.
+
+<br />
+
+_CLI Arguments:_
+
 ```
 Usage: Imazipper CLI [-hv] [-a=FILE] [-f=FILE] [-i=FILE] [-o=FILE/FOLDER]
                      [-t=<JobType>]

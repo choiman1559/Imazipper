@@ -1,0 +1,18 @@
+#!/bin/bash
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*) machine="linux";;
+    Darwin*) machine="mac";;
+    CYGWIN*) machine="win";;
+    MINGW*) machine="win";;
+esac
+
+SCRIPT_DIR="$( cd "$( dirname "$BASH_SOURCE" )" && pwd -P )"
+cd $SCRIPT_DIR
+if [ -d "../lib" ]; then
+	cd ../lib
+	APP_HOME="`pwd -P`"
+	java --module-path $APP_HOME/apiguardian-api-1.1.2.jar:$APP_HOME/controlsfx-11.0.0.jar:$APP_HOME/imazipper_gui.jar:$APP_HOME/imazipper_library.jar:$APP_HOME/javafx-base-17.0.0.1.jar:$APP_HOME/javafx-base-17.0.0.1-${machine}.jar:$APP_HOME/javafx-controls-17.0.0.1.jar:$APP_HOME/javafx-controls-17.0.0.1-${machine}.jar:$APP_HOME/javafx-fxml-17.0.0.1-${machine}.jar:$APP_HOME/javafx-graphics-17.0.0.1.jar:$APP_HOME/javafx-graphics-17.0.0.1-${machine}.jar:$APP_HOME/jmetro-11.6.15.jar:$APP_HOME/junit-jupiter-api-5.8.1.jar:$APP_HOME/junit-jupiter-engine-5.8.1.jar:$APP_HOME/junit-platform-commons-1.8.1.jar:$APP_HOME/junit-platform-engine-1.8.1.jar:$APP_HOME/opentest4j-1.2.0.jar:$APP_HOME/picocli-4.6.2.jar --add-modules javafx.controls,javafx.fxml --module com.imazipper.gui/com.imazipper.gui.MainApplication
+else
+	echo "'../lib' folder not exists! abort command..."
+fi

@@ -2,22 +2,6 @@
   <artifact name="Imazipper:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Imazipper_jar</output-path>
     <root id="root">
-      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.8.1" />
-      <element id="library" level="project" name="Gradle: info.picocli:picocli:4.6.2" />
-      <element id="library" level="project" name="Gradle: org.jfxtras:jmetro:11.6.15" />
-      <element id="library" level="project" name="Gradle: org.controlsfx:controlsfx:11.0.0" />
-      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.1" />
-      <element id="library" level="project" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" />
-      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.8.1" />
-      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-commons:1.8.1" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:11.0.2" />
-      <element id="library" level="project" name="Gradle: org.opentest4j:opentest4j:1.2.0" />
-      <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:linux:11.0.2" />
       <element id="archive" name="imazipper_gui.jar">
         <element id="module-output" name="Imazipper.imazipper-gui.main" />
         <element id="dir-copy" path="$PROJECT_DIR$/imazipper-gui/src/main/resources" />
@@ -34,6 +18,30 @@
       <element id="archive" name="imazipper_library.jar">
         <element id="module-output" name="Imazipper.imazipper-library.main" />
       </element>
+      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-commons:1.8.1" />
+      <element id="library" level="project" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:win:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: info.picocli:picocli:4.6.2" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:mac:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:mac:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.jfxtras:jmetro:11.6.15" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:linux:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:win:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.8.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.8.1" />
+      <element id="library" level="project" name="Gradle: org.controlsfx:controlsfx:11.0.0" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:mac:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:mac:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:win:17.0.0.1" />
+      <element id="library" level="project" name="Gradle: org.opentest4j:opentest4j:1.2.0" />
     </root>
   </artifact>
 </component>

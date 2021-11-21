@@ -13,6 +13,6 @@
     <Label prefHeight="36.0" prefWidth="336.0" text="Image&amp;File combine/splitter v.0.1&#10;This program is FOSS under GNU GPL 3.0 License." textAlignment="CENTER" />
     <Button onAction="#onComButtonClick" prefHeight="30.0" prefWidth="200.0" text="Combine" />
     <Button onAction="#onSplitButtonClick" prefHeight="30.0" prefWidth="200.0" text="Split" />
-   <Button mnemonicParsing="false" onAction="#onGitButtonClick" prefHeight="30.0" prefWidth="200.0" text="Git repo" />
-   <Button mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="30.0" prefWidth="200.0" text="Exit" />
+    <Button mnemonicParsing="false" onAction="#onGitButtonClick" prefHeight="30.0" prefWidth="200.0" text="Git repo" />
+    <Button mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="30.0" prefWidth="200.0" text="Exit" />
 </VBox>

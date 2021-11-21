@@ -31,7 +31,23 @@ test {
 
 dependencies {
     implementation project(':imazipper-library')
-    implementation 'org.openjfx:javafx-controls:17.0.0.1'
+
+    implementation 'org.openjfx:javafx-base:17.0.0.1:linux'
+    implementation 'org.openjfx:javafx-base:17.0.0.1:win'
+    implementation 'org.openjfx:javafx-base:17.0.0.1:mac'
+
+    implementation 'org.openjfx:javafx-fxml:17.0.0.1:linux'
+    implementation 'org.openjfx:javafx-fxml:17.0.0.1:win'
+    implementation 'org.openjfx:javafx-fxml:17.0.0.1:mac'
+
+    implementation 'org.openjfx:javafx-graphics:17.0.0.1:linux'
+    implementation 'org.openjfx:javafx-graphics:17.0.0.1:win'
+    implementation 'org.openjfx:javafx-graphics:17.0.0.1:mac'
+
+    implementation 'org.openjfx:javafx-controls:17.0.0.1:linux'
+    implementation 'org.openjfx:javafx-controls:17.0.0.1:win'
+    implementation 'org.openjfx:javafx-controls:17.0.0.1:mac'
+
     implementation ('org.jfxtras:jmetro:11.6.15') {
         exclude group: 'org.openjfx'
     }

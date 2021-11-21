@@ -1,0 +1,10 @@
+#!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "$BASH_SOURCE" )" && pwd -P )"
+cd $SCRIPT_DIR
+if [ -d "../lib" ]; then
+	cd ../lib
+	APP_HOME="`pwd -P`"
+	java -jar $APP_HOME/imazipper_cui.jar "$@"
+else
+	echo "'../lib' folder not exists! abort command..."
+fi

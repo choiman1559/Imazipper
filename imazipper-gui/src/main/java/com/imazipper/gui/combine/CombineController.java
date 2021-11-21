@@ -3,7 +3,6 @@ package com.imazipper.gui.combine;
 import com.imazipper.gui.MainApplication;
 import com.imazipper.gui.task.TaskScreen;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
@@ -61,6 +60,6 @@ public class CombineController {
 
     @FXML
     protected void onCancelButtonClick() throws IOException {
-        startStage(new FXMLLoader(MainApplication.class.getResource("main-view.fxml")));
+        new MainApplication().loadMainScreen();
     }
 }

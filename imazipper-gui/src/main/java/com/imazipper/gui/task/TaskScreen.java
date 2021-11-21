@@ -5,6 +5,7 @@ import com.imazipper.gui.combine.CombineScreen;
 import com.imazipper.lib.Combiner;
 import com.imazipper.lib.Splitter;
 import com.imazipper.lib.TaskResult;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -27,8 +28,10 @@ public class TaskScreen {
         if (file1.exists() || file2.exists() || outputFile.exists()) {
             screen.setCurrentStatus("Target Files: \n1. " + file1.getName() + "\n2. " + file2.getName() + "\nOutput: " + output);
             screen.setCurrentStatus("Starting combine file...");
-            TaskResult result = Combiner.Combine(file1, file2, outputFile);
-            handleResult(screen, result);
+            new Thread(() -> {
+                TaskResult result = Combiner.Combine(file1, file2, outputFile);
+                handleResult(screen, result);
+            }).start();
         } else {
             showFileNotFoundDialog(screen);
         }
@@ -45,8 +48,10 @@ public class TaskScreen {
         if (inputFile.exists() || outputFile.exists()) {
             screen.setCurrentStatus("Target File: " + inputFile.getName() + "\nOutput: " + output + "/Imazipper_output");
             screen.setCurrentStatus("Starting combine file...");
-            TaskResult result = Splitter.Split(inputFile, outputFile, isForceMode);
-            handleResult(screen, result);
+            new Thread(() -> {
+                TaskResult result = Splitter.Split(inputFile, outputFile, isForceMode);
+                handleResult(screen, result);
+            }).start();
         } else {
             showFileNotFoundDialog(screen);
         }
@@ -71,17 +76,21 @@ public class TaskScreen {
     }
 
     public static void handleResult(TaskController screen, TaskResult result) {
-        screen.getCloseButton().setDisable(false);
-        screen.getProgressBar().setVisible(false);
-        if (result.isTaskSuccess()) {
-            screen.setCurrentStatus("Task done successfully!");
-        } else if (result.hasException()) {
-            screen.setCurrentStatus("Task failed!");
-            screen.updateLog("Error: " + result.getErrorCode());
-            screen.updateLog("Stacktrace: " + result.getTaskException().toString());
-        } else {
-            screen.setCurrentStatus("Task failed!");
-            screen.updateLog("Error: " + result.getErrorCode());
-        }
+        Platform.runLater(() -> {
+            screen.getCloseButton().setDisable(false);
+            screen.getProgressBar().setVisible(false);
+            if (result.isTaskSuccess()) {
+                screen.setCurrentStatus("Task done successfully!");
+
+
+            } else if (result.hasException()) {
+                screen.setCurrentStatus("Task failed!");
+                screen.updateLog("Error: " + result.getErrorCode());
+                screen.updateLog("Stacktrace: " + result.getTaskException().toString());
+            } else {
+                screen.setCurrentStatus("Task failed!");
+                screen.updateLog("Error: " + result.getErrorCode());
+            }
+        });
     }
 }

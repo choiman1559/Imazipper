@@ -25,6 +25,23 @@ java {
     modularity.inferModulePath.set(true)
 }
 
+task createProperties(dependsOn: processResources) {
+    doLast {
+        File file = new File("$projectDir/src/main/resources/com/imazipper/gui/version.properties")
+        if(file.exists()) file.delete()
+        file.createNewFile()
+        file.withWriter('UTF-8') { w ->
+            Properties p = new Properties()
+            p.put('versionName',project.versionName.toString())
+            p.store w, null
+        }
+    }
+}
+
+classes {
+    dependsOn createProperties
+}
+
 test {
     useJUnitPlatform()
 }

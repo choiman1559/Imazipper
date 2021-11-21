@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-project.ext.versionName = '0.1'
+project.ext.versionName = '0.1.2'
 
 group 'com.imazipper'
 version project.versionName

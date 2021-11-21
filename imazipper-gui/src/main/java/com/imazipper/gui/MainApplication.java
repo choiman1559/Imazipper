@@ -11,6 +11,7 @@ import jfxtras.styles.jmetro.Style;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Properties;
 
 public class MainApplication extends Application {
     public static Scene scene;
@@ -19,6 +20,11 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        MainApplication.stage = stage;
+        loadMainScreen();
+    }
+
+    public void loadMainScreen() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         scene = new Scene(fxmlLoader.load(), 390, 250);
 
@@ -29,9 +35,13 @@ public class MainApplication extends Application {
         stage.setResizable(false);
         stage.setTitle("Imazipper combine/split");
         stage.setScene(scene);
-        MainApplication.stage = stage;
         MainApplication.stage.show();
-        hostServices = getHostServices();
+        MainApplication.hostServices = getHostServices();
+        MainController controller = fxmlLoader.getController();
+
+        Properties properties = new Properties();
+        properties.load(MainApplication.class.getResourceAsStream("version.properties"));
+        controller.VersionLabel.setText("Version v." + properties.getProperty("versionName"));
     }
 
     public static void main(String[] args) {

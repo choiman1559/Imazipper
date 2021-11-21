@@ -4,6 +4,7 @@ module com.imazipper.gui {
 
     requires org.jfxtras.styles.jmetro;
     requires com.imazipper.lib;
+    requires java.desktop;
 
     opens com.imazipper.gui to javafx.fxml;
     exports com.imazipper.gui;

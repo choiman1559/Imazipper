@@ -3,10 +3,13 @@ package com.imazipper.gui;
 import com.imazipper.gui.combine.CombineScreen;
 import com.imazipper.gui.split.SplitScreen;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
 public class MainController {
+
+    public Label VersionLabel;
 
     @FXML
     protected void onComButtonClick() throws IOException {

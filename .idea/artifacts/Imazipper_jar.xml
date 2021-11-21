@@ -4,10 +4,10 @@
     <root id="root">
       <element id="archive" name="imazipper_gui.jar">
         <element id="module-output" name="Imazipper.imazipper-gui.main" />
-        <element id="dir-copy" path="$PROJECT_DIR$/imazipper-gui/src/main/resources" />
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/imazipper-gui/src/main/META-INF/MANIFEST.MF" />
         </element>
+        <element id="dir-copy" path="$PROJECT_DIR$/imazipper-gui/src/main/resources" />
       </element>
       <element id="archive" name="imazipper_cui.jar">
         <element id="module-output" name="Imazipper.imazipper-cui.main" />
